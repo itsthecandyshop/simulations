@@ -1,0 +1,26 @@
+{
+  "name": "simulations",
+  "version": "1.0.0",
+  "description": "### Simulate basic exchange",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itsthecandyshop/simulations.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/itsthecandyshop/simulations/issues"
+  },
+  "homepage": "https://github.com/itsthecandyshop/simulations#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.6",
+    "@babel/node": "^7.8.7",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/preset-env": "^7.9.6"
+  }
+}
