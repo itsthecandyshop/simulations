@@ -3,5 +3,5 @@
 ### Simulate basic exchange
 
 ```bash
-node basic-exchange.js
+npx babel-node sims/basic-exchange.js
 ```
