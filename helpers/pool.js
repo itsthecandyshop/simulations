@@ -18,7 +18,7 @@ export default class Pool{
   get ethRate() {
     return this.tokenBalance / this.ethBalance
   }
-  
+
   get tokenRate() {
     return this.ethBalance / this.tokenBalance
   }
