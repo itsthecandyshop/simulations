@@ -2,11 +2,13 @@ export default class Pool{
   ethBalance
   tokenBalance
   name
+  color
 
-  constructor({ ethBalance, tokenBalance, name }) {
+  constructor({ ethBalance, tokenBalance, name, color }) {
     this.ethBalance = ethBalance
     this.tokenBalance = tokenBalance
     this.name = name
+    this.color = color
   }
 
   get productConst() {
