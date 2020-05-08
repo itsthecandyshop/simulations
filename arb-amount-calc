@@ -29,6 +29,6 @@ tknWithdrawn = oldTknBalance - newTknBalance
                = oldTknBalance - (oldEthBalance * oldTknBalance) / (oldEthBalance + ethDeposited)
 x = t2 - (e2 * t2) / (e2 + y2) ----------------------------- (3)
 
-solving (1), (2), (3)
+solving (1), (2), (3) for variables x, y1, y2
 y2 = t1 * (e1 - e2) / (t1 + t2) -------- (wrong answer)
 
