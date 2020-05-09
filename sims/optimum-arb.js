@@ -62,19 +62,28 @@ depositEth({
   ethInputAmount: 100
 })
 
-const ethInputAmount = uniswap.tokenBalance * (uniswap.ethBalance - duoswap.ethBalance) / (uniswap.tokenBalance + duoswap.tokenBalance)
-console.log(ethInputAmount)
-depositEth({
+// amount calculated to make final exchange rates same for both pools
+// refer arb-amount-calc for more information
+const duoswapEthInput = (
+  Math.sqrt(uniswap.ethBalance * uniswap.tokenBalance * duoswap.ethBalance * duoswap.tokenBalance) -
+  (uniswap.tokenBalance * duoswap.ethBalance)) /
+  (uniswap.tokenBalance + duoswap.tokenBalance)
+
+const { tokenOutputAmount: duoswapTokenOutput } = depositEth({
   user: pro,
   pool: duoswap,
-  ethInputAmount: 281
+  ethInputAmount: duoswapEthInput
 })
 
-depositToken({
+const uniswapTokenInput = duoswapTokenOutput
+const { ethOutputAmount: uniswapEthOutput } = depositToken({
   user: pro,
   pool: uniswap,
-  tokenInputAmount: 4927.66330556773
+  tokenInputAmount: uniswapTokenInput
 })
+
+console.log(`=> Net profit ${(uniswapEthOutput - duoswapEthInput).toString().yellow} ETH`)
+console.log('')
 
 logState({
   label: 'Final State',
